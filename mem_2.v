@@ -1,0 +1,270 @@
+module imem(clk, pc, wr_ena, inst);
+parameter DATA_WIDTH =  32;
+input clk;
+input [1023:0] pc;
+input wr_ena;
+output [DATA_WIDTH-1:0] inst;
+reg    [DATA_WIDTH-1:0] inst;
+always@(pc) begin
+    case(pc)
+        0:  inst   <=  32'b0_0000_0000_0000_0000_0000_0000_0000_000;
+        4:  inst   <=  32'h01700293  ; // line 1 
+        8:  inst   <=  32'h0051a023  ; // line 2 
+        12:  inst   <=  32'h03000293  ; // line 3 
+        16:  inst   <=  32'h0051a223  ; // line 4 
+        20:  inst   <=  32'h00900293  ; // line 5 
+        24:  inst   <=  32'h0051a423  ; // line 6 
+        28:  inst   <=  32'h01100293  ; // line 7 
+        32:  inst   <=  32'h0051a623  ; // line 8 
+        36:  inst   <=  32'h00a00293  ; // line 9 
+        40:  inst   <=  32'h0051a823  ; // line 10 
+        44:  inst   <=  32'h00b00293  ; // line 11 
+        48:  inst   <=  32'h0051aa23  ; // line 12 
+        52:  inst   <=  32'h01100293  ; // line 13 
+        56:  inst   <=  32'h0051ac23  ; // line 14 
+        60:  inst   <=  32'h02300293  ; // line 15 
+        64:  inst   <=  32'h0051ae23  ; // line 16 
+        68:  inst   <=  32'h00e00293  ; // line 17 
+        72:  inst   <=  32'h0251a023  ; // line 18 
+        76:  inst   <=  32'h01700293  ; // line 19 
+        80:  inst   <=  32'h0251a223  ; // line 20 
+        84:  inst   <=  32'h00900293  ; // line 21 
+        88:  inst   <=  32'h00900413  ; // line 22 
+        92:  inst   <=  32'h00a00f13  ; // line 23 
+        96:  inst   <=  32'h00000493  ; // line 24 
+        100:  inst   <=  32'h0001a303  ; // line 25 
+        104:  inst   <=  32'h0900006f  ; // line 26 
+        108:  inst   <=  32'h00900f13  ; // line 27 
+        112:  inst   <=  32'h00400493  ; // line 28 
+        116:  inst   <=  32'h0041a303  ; // line 29 
+        120:  inst   <=  32'h0800006f  ; // line 30 
+        124:  inst   <=  32'h00800f13  ; // line 31 
+        128:  inst   <=  32'h00800493  ; // line 32 
+        132:  inst   <=  32'h0081a303  ; // line 33 
+        136:  inst   <=  32'h0700006f  ; // line 34 
+        140:  inst   <=  32'h00700f13  ; // line 35 
+        144:  inst   <=  32'h00c00493  ; // line 36 
+        148:  inst   <=  32'h00c1a303  ; // line 37 
+        152:  inst   <=  32'h0600006f  ; // line 38 
+        156:  inst   <=  32'h00600f13  ; // line 39 
+        160:  inst   <=  32'h01000493  ; // line 40 
+        164:  inst   <=  32'h0101a303  ; // line 41 
+        168:  inst   <=  32'h0500006f  ; // line 42 
+        172:  inst   <=  32'h00500f13  ; // line 43 
+        176:  inst   <=  32'h01400493  ; // line 44 
+        180:  inst   <=  32'h0141a303  ; // line 45 
+        184:  inst   <=  32'h0400006f  ; // line 46 
+        188:  inst   <=  32'h00400f13  ; // line 47 
+        192:  inst   <=  32'h01800493  ; // line 48 
+        196:  inst   <=  32'h0181a303  ; // line 49 
+        200:  inst   <=  32'h0300006f  ; // line 50 
+        204:  inst   <=  32'h00300f13  ; // line 51 
+        208:  inst   <=  32'h01c00493  ; // line 52 
+        212:  inst   <=  32'h01c1a303  ; // line 53 
+        216:  inst   <=  32'h0200006f  ; // line 54 
+        220:  inst   <=  32'h00200f13  ; // line 55 
+        224:  inst   <=  32'h02000493  ; // line 56 
+        228:  inst   <=  32'h0201a303  ; // line 57 
+        232:  inst   <=  32'h0100006f  ; // line 58 
+        236:  inst   <=  32'h00100f13  ; // line 59 
+        240:  inst   <=  32'h02400493  ; // line 60 
+        244:  inst   <=  32'h0241a303  ; // line 61 
+        248:  inst   <=  32'h02829463  ; // line 62 
+        252:  inst   <=  32'h00af2f93  ; // line 63 
+        256:  inst   <=  32'h000f9863  ; // line 64 
+        260:  inst   <=  32'h006003b3  ; // line 65 
+        264:  inst   <=  32'h00900933  ; // line 66 
+        268:  inst   <=  32'hf61ff06f  ; // line 67 
+        272:  inst   <=  32'h04734463  ; // line 68 
+        276:  inst   <=  32'h006003b3  ; // line 69 
+        280:  inst   <=  32'h00900933  ; // line 70 
+        284:  inst   <=  32'h03c0006f  ; // line 71 
+        288:  inst   <=  32'h020a8063  ; // line 72 
+        292:  inst   <=  32'h01d34663  ; // line 73 
+        296:  inst   <=  32'h03d31863  ; // line 74 
+        300:  inst   <=  32'h1480006f  ; // line 75 
+        304:  inst   <=  32'h006003b3  ; // line 76 
+        308:  inst   <=  32'h00900933  ; // line 77 
+        312:  inst   <=  32'h00000a93  ; // line 78 
+        316:  inst   <=  32'h01c0006f  ; // line 79 
+        320:  inst   <=  32'h01d34663  ; // line 80 
+        324:  inst   <=  32'h01d31a63  ; // line 81 
+        328:  inst   <=  32'h12c0006f  ; // line 82 
+        332:  inst   <=  32'h00734663  ; // line 83 
+        336:  inst   <=  32'h006003b3  ; // line 84 
+        340:  inst   <=  32'h00900933  ; // line 85 
+        344:  inst   <=  32'h00af2f93  ; // line 86 
+        348:  inst   <=  32'hf00f88e3  ; // line 87 
+        352:  inst   <=  32'h009f2f93  ; // line 88 
+        356:  inst   <=  32'hf00f8ce3  ; // line 89 
+        360:  inst   <=  32'h008f2f93  ; // line 90 
+        364:  inst   <=  32'hf20f80e3  ; // line 91 
+        368:  inst   <=  32'h007f2f93  ; // line 92 
+        372:  inst   <=  32'hf20f84e3  ; // line 93 
+        376:  inst   <=  32'h006f2f93  ; // line 94 
+        380:  inst   <=  32'hf20f88e3  ; // line 95 
+        384:  inst   <=  32'h005f2f93  ; // line 96 
+        388:  inst   <=  32'hf20f8ce3  ; // line 97 
+        392:  inst   <=  32'h004f2f93  ; // line 98 
+        396:  inst   <=  32'hf40f80e3  ; // line 99 
+        400:  inst   <=  32'h003f2f93  ; // line 100 
+        404:  inst   <=  32'hf40f84e3  ; // line 101 
+        408:  inst   <=  32'h002f2f93  ; // line 102 
+        412:  inst   <=  32'hf40f88e3  ; // line 103 
+        416:  inst   <=  32'h0040006f  ; // line 104 
+        420:  inst   <=  32'h00700eb3  ; // line 105 
+        424:  inst   <=  32'h0092af93  ; // line 106 
+        428:  inst   <=  32'h000f9863  ; // line 107 
+        432:  inst   <=  32'h0471a823  ; // line 108 
+        436:  inst   <=  32'h3b21a423  ; // line 109 
+        440:  inst   <=  32'h0ac0006f  ; // line 110 
+        444:  inst   <=  32'h0082af93  ; // line 111 
+        448:  inst   <=  32'h000f9863  ; // line 112 
+        452:  inst   <=  32'h0471a623  ; // line 113 
+        456:  inst   <=  32'h3b21a223  ; // line 114 
+        460:  inst   <=  32'h0980006f  ; // line 115 
+        464:  inst   <=  32'h0072af93  ; // line 116 
+        468:  inst   <=  32'h000f9863  ; // line 117 
+        472:  inst   <=  32'h0471a423  ; // line 118 
+        476:  inst   <=  32'h3b21a023  ; // line 119 
+        480:  inst   <=  32'h0840006f  ; // line 120 
+        484:  inst   <=  32'h0062af93  ; // line 121 
+        488:  inst   <=  32'h000f9863  ; // line 122 
+        492:  inst   <=  32'h0471a223  ; // line 123 
+        496:  inst   <=  32'h3921ae23  ; // line 124 
+        500:  inst   <=  32'h0700006f  ; // line 125 
+        504:  inst   <=  32'h0052af93  ; // line 126 
+        508:  inst   <=  32'h000f9863  ; // line 127 
+        512:  inst   <=  32'h0471a023  ; // line 128 
+        516:  inst   <=  32'h3921ac23  ; // line 129 
+        520:  inst   <=  32'h05c0006f  ; // line 130 
+        524:  inst   <=  32'h0042af93  ; // line 131 
+        528:  inst   <=  32'h000f9863  ; // line 132 
+        532:  inst   <=  32'h0271ae23  ; // line 133 
+        536:  inst   <=  32'h3921aa23  ; // line 134 
+        540:  inst   <=  32'h0480006f  ; // line 135 
+        544:  inst   <=  32'h0032af93  ; // line 136 
+        548:  inst   <=  32'h000f9863  ; // line 137 
+        552:  inst   <=  32'h0271ac23  ; // line 138 
+        556:  inst   <=  32'h3921a823  ; // line 139 
+        560:  inst   <=  32'h0340006f  ; // line 140 
+        564:  inst   <=  32'h0022af93  ; // line 141 
+        568:  inst   <=  32'h000f9863  ; // line 142 
+        572:  inst   <=  32'h0271aa23  ; // line 143 
+        576:  inst   <=  32'h3921a623  ; // line 144 
+        580:  inst   <=  32'h0200006f  ; // line 145 
+        584:  inst   <=  32'h0012af93  ; // line 146 
+        588:  inst   <=  32'h000f9863  ; // line 147 
+        592:  inst   <=  32'h0271a823  ; // line 148 
+        596:  inst   <=  32'h3921a423  ; // line 149 
+        600:  inst   <=  32'h00c0006f  ; // line 150 
+        604:  inst   <=  32'h0271a623  ; // line 151 
+        608:  inst   <=  32'h3921a223  ; // line 152 
+        612:  inst   <=  32'h12028463  ; // line 153 
+        616:  inst   <=  32'hfff28293  ; // line 154 
+        620:  inst   <=  32'h00100a93  ; // line 155 
+        624:  inst   <=  32'hdedff06f  ; // line 156 
+        628:  inst   <=  32'h0082af93  ; // line 157 
+        632:  inst   <=  32'h3a81aa03  ; // line 158 
+        636:  inst   <=  32'h01449463  ; // line 159 
+        640:  inst   <=  32'hed9ff06f  ; // line 160 
+        644:  inst   <=  32'h000f1663  ; // line 161 
+        648:  inst   <=  32'hec0f82e3  ; // line 162 
+        652:  inst   <=  32'h0080006f  ; // line 163 
+        656:  inst   <=  32'hea0f80e3  ; // line 164 
+        660:  inst   <=  32'h0072af93  ; // line 165 
+        664:  inst   <=  32'h3a41aa03  ; // line 166 
+        668:  inst   <=  32'h01449463  ; // line 167 
+        672:  inst   <=  32'heb9ff06f  ; // line 168 
+        676:  inst   <=  32'h000f1663  ; // line 169 
+        680:  inst   <=  32'hea0f82e3  ; // line 170 
+        684:  inst   <=  32'h0080006f  ; // line 171 
+        688:  inst   <=  32'he80f80e3  ; // line 172 
+        692:  inst   <=  32'h0062af93  ; // line 173 
+        696:  inst   <=  32'h3a01aa03  ; // line 174 
+        700:  inst   <=  32'h01449463  ; // line 175 
+        704:  inst   <=  32'he99ff06f  ; // line 176 
+        708:  inst   <=  32'h000f1663  ; // line 177 
+        712:  inst   <=  32'he80f82e3  ; // line 178 
+        716:  inst   <=  32'h0080006f  ; // line 179 
+        720:  inst   <=  32'he60f80e3  ; // line 180 
+        724:  inst   <=  32'h0052af93  ; // line 181 
+        728:  inst   <=  32'h39c1aa03  ; // line 182 
+        732:  inst   <=  32'h01449463  ; // line 183 
+        736:  inst   <=  32'he79ff06f  ; // line 184 
+        740:  inst   <=  32'h000f1663  ; // line 185 
+        744:  inst   <=  32'he60f82e3  ; // line 186 
+        748:  inst   <=  32'h0080006f  ; // line 187 
+        752:  inst   <=  32'he40f80e3  ; // line 188 
+        756:  inst   <=  32'h0042af93  ; // line 189 
+        760:  inst   <=  32'h3981aa03  ; // line 190 
+        764:  inst   <=  32'h01449463  ; // line 191 
+        768:  inst   <=  32'he59ff06f  ; // line 192 
+        772:  inst   <=  32'h000f1663  ; // line 193 
+        776:  inst   <=  32'he40f82e3  ; // line 194 
+        780:  inst   <=  32'h0080006f  ; // line 195 
+        784:  inst   <=  32'he20f80e3  ; // line 196 
+        788:  inst   <=  32'h0032af93  ; // line 197 
+        792:  inst   <=  32'h3941aa03  ; // line 198 
+        796:  inst   <=  32'h01449463  ; // line 199 
+        800:  inst   <=  32'he39ff06f  ; // line 200 
+        804:  inst   <=  32'h000f1663  ; // line 201 
+        808:  inst   <=  32'he20f82e3  ; // line 202 
+        812:  inst   <=  32'h0080006f  ; // line 203 
+        816:  inst   <=  32'he00f80e3  ; // line 204 
+        820:  inst   <=  32'h0022af93  ; // line 205 
+        824:  inst   <=  32'h3901aa03  ; // line 206 
+        828:  inst   <=  32'h01449463  ; // line 207 
+        832:  inst   <=  32'he19ff06f  ; // line 208 
+        836:  inst   <=  32'h000f1663  ; // line 209 
+        840:  inst   <=  32'he00f82e3  ; // line 210 
+        844:  inst   <=  32'h0080006f  ; // line 211 
+        848:  inst   <=  32'hde0f80e3  ; // line 212 
+        852:  inst   <=  32'h0012af93  ; // line 213 
+        856:  inst   <=  32'h38c1aa03  ; // line 214 
+        860:  inst   <=  32'h01449463  ; // line 215 
+        864:  inst   <=  32'hdf9ff06f  ; // line 216 
+        868:  inst   <=  32'h000f1663  ; // line 217 
+        872:  inst   <=  32'hde0f82e3  ; // line 218 
+        876:  inst   <=  32'h0080006f  ; // line 219 
+        880:  inst   <=  32'hdc0f80e3  ; // line 220 
+        884:  inst   <=  32'h0002af93  ; // line 221 
+        888:  inst   <=  32'h3881aa03  ; // line 222 
+        892:  inst   <=  32'h01449463  ; // line 223 
+        896:  inst   <=  32'hdd9ff06f  ; // line 224 
+        900:  inst   <=  32'h000f1263  ; // line 225 
+        904:  inst   <=  32'hda0f84e3  ; // line 226 
+        908:  inst   <=  32'h0002f293  ; // line 227 
+        912:  inst   <=  32'h0002f313  ; // line 228 
+        916:  inst   <=  32'h00130313  ; // line 229 
+        920:  inst   <=  32'h02c02e03  ; // line 230 
+        924:  inst   <=  32'hfffe0e13  ; // line 231 
+        928:  inst   <=  32'h000e0c63  ; // line 232 
+        932:  inst   <=  32'h005303b3  ; // line 233 
+        936:  inst   <=  32'h006002b3  ; // line 234 
+        940:  inst   <=  32'h00700333  ; // line 235 
+        944:  inst   <=  32'hfffe0e13  ; // line 236 
+        948:  inst   <=  32'hfedff06f  ; // line 237 
+        952:  inst   <=  32'h04702c23  ; // line 238 
+        956:  inst   <=  32'h02c02503  ; // line 239 
+        960:  inst   <=  32'h00100593  ; // line 240 
+        964:  inst   <=  32'h00100613  ; // line 241 
+        968:  inst   <=  32'h00b50e63  ; // line 242 
+        972:  inst   <=  32'h00158593  ; // line 243 
+        976:  inst   <=  32'h00058313  ; // line 244 
+        980:  inst   <=  32'h00060393  ; // line 245 
+        984:  inst   <=  32'h014000ef  ; // line 246 
+        988:  inst   <=  32'h00500633  ; // line 247 
+        992:  inst   <=  32'hfea596e3  ; // line 248 
+        996:  inst   <=  32'h04c02e23  ; // line 249 
+        1000:  inst   <=  32'h0180006f  ; // line 250 
+        1004:  inst   <=  32'h0002f293  ; // line 251 
+        1008:  inst   <=  32'h007282b3  ; // line 252 
+        1012:  inst   <=  32'hfff30313  ; // line 253 
+        1016:  inst   <=  32'hfe031ce3  ; // line 254 
+        1020:  inst   <=  32'h00008067  ; // line 255 
+        1024:  inst   <=  32'h00000033  ; // line 256 
+        default: inst <= 0;
+    endcase
+end
+endmodule
